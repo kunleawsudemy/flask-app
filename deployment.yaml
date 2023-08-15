@@ -17,10 +17,10 @@ spec:
     spec:
       # serviceAccountName: xxx
       containers:
-      - image: <ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com/flask-simple-app
-        name: flask-simple-app-container
+      - image: 017237329177.dkr.ecr.us-west-2.amazonaws.com/flask-app:latest
+        name: flask-app-container
         ports:
-        - containerPort: 7878
+        - containerPort: 80
         resources:
           limits:
             memory: 50Mi
@@ -31,6 +31,6 @@ spec:
         livenessProbe:
           httpGet:
             path: /healthz
-            port: 7878
+            port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
