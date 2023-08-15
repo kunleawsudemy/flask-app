@@ -13,6 +13,11 @@ def myhome():
 def contact():
     return "Contact AWS Support Engineers at info@awssupport.aws"
 
+# route used for k8s liveness probes
+@app.route("/healthz")
+def healthz():
+    return "Internal Check is Goodie..."
+
 @app.route("/address")
 def address():
     return "We are located at 410 Terry Ave N, Seattle, WA, United States"
